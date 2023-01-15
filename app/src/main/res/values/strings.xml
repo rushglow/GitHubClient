@@ -2,4 +2,5 @@
     <string name="app_name">GitHubClient</string>
     <string name="sign_in_text">Sign in to GitHub</string>
     <string name="sign_in_btn">Sign in</string>
+    <string name="repo_text_tv">Repositories</string>
 </resources>
