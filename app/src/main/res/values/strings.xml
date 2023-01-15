@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GitHubClient</string>
+    <string name="sign_in_text">Sign in to GitHub</string>
+    <string name="sign_in_btn">Sign in</string>
+</resources>
