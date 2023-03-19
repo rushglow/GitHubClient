@@ -6,10 +6,12 @@
         <entry key="app/src/main/res/drawable/background.xml" value="0.1305" />
         <entry key="app/src/main/res/drawable/ic_back_ic.xml" value="0.118" />
         <entry key="app/src/main/res/drawable/ic_git_logo.xml" value="0.118" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.118" />
         <entry key="app/src/main/res/drawable/logo.xml" value="0.1305" />
         <entry key="app/src/main/res/drawable/repo_item.xml" value="0.118" />
         <entry key="app/src/main/res/drawable/rounded_rectangle.xml" value="0.118" />
         <entry key="app/src/main/res/drawable/vector.xml" value="0.118" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_repo.xml" value="0.25831298828125004" />
         <entry key="app/src/main/res/layout/repo_item.xml" value="0.6134185303514377" />

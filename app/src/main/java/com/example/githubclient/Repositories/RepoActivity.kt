@@ -1,7 +1,8 @@
-package com.example.githubclient
+package com.example.githubclient.Repositories
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.githubclient.R
 
 class RepoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context=".MainActivity"
+    tools:context=".Login.LoginActivity"
 
     android:background="@drawable/background">
 
@@ -44,7 +44,7 @@
     <LinearLayout
         android:orientation="vertical"
 
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
 
         app:layout_constraintStart_toStartOf="parent"
@@ -69,6 +69,7 @@
             android:textColor="@color/white"
             android:textSize="16sp"/>
         <EditText
+            android:id="@+id/tokenEt"
             android:layout_width="match_parent"
             android:layout_height="48dp"
 
@@ -76,23 +77,27 @@
             android:layout_marginBottom="32dp"
 
             android:background="@drawable/rounded_rectangle"/>
-        <TextView
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sing_in_btn"
             android:layout_width="match_parent"
             android:layout_height="48dp"
 
+            android:layout_gravity="center"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="16dp"
 
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_rectangle"
+            android:backgroundTint="#54A258"
+
+            android:clickable="true"
+            android:drawableTint="#3F7E42"
+
+            android:gravity="center"
             android:text="@string/sign_in_btn"
             android:textColor="@color/white"
             android:textSize="16sp"
-            android:textStyle="bold"
-
-            android:layout_gravity="center"
-            android:gravity="center"
-
-            android:background="@drawable/rounded_rectangle"
-            android:backgroundTint="#8054A258"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 
