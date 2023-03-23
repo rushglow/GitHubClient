@@ -3,6 +3,7 @@ package com.example.githubclient.Login
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.doAfterTextChanged
 import com.example.githubclient.R
 import com.example.githubclient.databinding.ActivityLoginBinding
 
@@ -14,7 +15,12 @@ class LoginActivity : AppCompatActivity(), LoginInterface {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        binding.singInBtn.setOnClickListener {
+        binding.btnSignIn.setOnClickListener(){
+            presenter.btnCall()
+        }
+
+        binding.tokenEt.doAfterTextChanged {
+            presenter.activityToken = binding.tokenEt.text.toString()
         }
     }
 
