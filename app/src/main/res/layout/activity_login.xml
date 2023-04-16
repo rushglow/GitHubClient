@@ -65,7 +65,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
 
-            android:text="Insert you token"
+            android:text="Insert you login"
             android:textColor="@color/white"
             android:textSize="16sp"/>
         <EditText

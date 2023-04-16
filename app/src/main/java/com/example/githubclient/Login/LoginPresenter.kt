@@ -4,19 +4,21 @@ import android.widget.Toast
 import com.example.githubclient.Model.Model
 import com.example.githubclient.databinding.ActivityLoginBinding
 
-class LoginPresenter(
-     var activityToken: String,
-     var LogInterface: LoginInterface,
-     var model: Model){
+class LoginPresenter(){
+     lateinit var binding: ActivityLoginBinding
+     lateinit var model: Model
+     lateinit var logActivity: LoginActivity
 
-     lateinit var LoginActivity: LoginActivity
-     var message = "Заполните поле!"
+     fun getToken(): String {
+          var token = binding.tokenEt.text.toString()
+          return token
+     }
 
-     fun btnCall(){
-          if (activityToken.isNullOrBlank()){
-               Toast.makeText(LoginActivity, message, Toast.LENGTH_SHORT).show()
-          }else{
-
+     fun tokenToModel(){
+          if (getToken().isNullOrBlank()){
+               Toast.makeText(logActivity,"Введите логин",Toast.LENGTH_LONG).show()
+          }else {
+               model.setLoginToken(getToken())
           }
      }
 }

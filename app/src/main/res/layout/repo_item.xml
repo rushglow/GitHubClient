@@ -73,6 +73,7 @@
         android:layout_marginBottom="@dimen/middle_margin" />
 
     <TextView
+        android:id="@+id/stargaze_count_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -102,6 +103,7 @@
         android:layout_marginBottom="@dimen/middle_margin" />
 
     <TextView
+        android:id="@+id/lang_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -133,6 +135,7 @@
  />
 
     <TextView
+        android:id="@+id/branch_count_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
