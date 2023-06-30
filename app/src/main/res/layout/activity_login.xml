@@ -78,7 +78,7 @@
 
             android:background="@drawable/rounded_rectangle"/>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:id="@+id/btn_sign_in"
             android:layout_width="match_parent"
             android:layout_height="48dp"

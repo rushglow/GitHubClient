@@ -1,7 +1,11 @@
 package com.example.githubclient.Login
 
-import com.example.githubclient.databinding.ActivityLoginBinding
+import moxy.MvpView
 
-interface LoginInterface {
-    
+interface LoginInterface: MvpView{
+    fun getLogin() {}
+
+    fun startRepoActivity(){}
+
+    fun tokenToModel()
 }

@@ -1,44 +1,51 @@
 package com.example.githubclient.Login
 
-import android.content.Intent
+
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.example.githubclient.R
-import com.example.githubclient.Repositories.RepoActivity
 import com.example.githubclient.databinding.ActivityLoginBinding
+import com.example.githubclient.databinding.ActivityRepoBinding
+import moxy.MvpAppCompatActivity
+import moxy.MvpView
+import moxy.presenter.InjectPresenter
 
-class LoginActivity : AppCompatActivity() {
+abstract class LoginActivity : MvpAppCompatActivity(R.layout.activity_login), LoginInterface{
+        lateinit var binding: ActivityLoginBinding
 
-    lateinit var binding: ActivityLoginBinding
-    lateinit var presenter: LoginPresenter
+        @InjectPresenter
+        lateinit var presenter: LoginPresenter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+                binding = ActivityLoginBinding.inflate(layoutInflater)
+                setContentView(binding.root)
 
-        binding.tokenEt.addTextChangedListener(object : TextWatcher{
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                TODO("Not yet implemented")
-            }
+                binding.tokenEt.addTextChangedListener(object : TextWatcher{
+                        override fun afterTextChanged(s: Editable) {
+                                getLogin()
+                        }
 
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                TODO("Not yet implemented")
-            }
+                        override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
 
-            override fun afterTextChanged(p0: Editable?) {
-                presenter.getToken()
-            }
-        })
-        binding.btnSignIn.setOnClickListener(){
-            presenter.tokenToModel()
+                        override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                })
+
+                binding.btnSignIn.setOnClickListener(){
+                        tokenToModel()
+                }
         }
-    }
 
-    fun startRepoActivity(){
-        val intent = Intent(this, RepoActivity::class.java)
-        startActivity(intent)
-    }
+        override fun getLogin() {
+                        presenter.getLogin()
+        }
+
+        override fun tokenToModel() {
+                TODO("Not yet implemented")
+        }
+
+        override fun startRepoActivity() {
+                super.startRepoActivity()
+        }
 }
