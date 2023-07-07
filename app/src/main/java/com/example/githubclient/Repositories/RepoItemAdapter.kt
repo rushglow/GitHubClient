@@ -10,8 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.githubclient.R
 import com.example.githubclient.databinding.RepoItemBinding
 
-class RepoItemAdapter (private val item: List<Repositories>):RecyclerView.Adapter<RepoItemAdapter.RepoItemViewHolder>() {
+class RepoItemAdapter ():RecyclerView.Adapter<RepoItemAdapter.RepoItemViewHolder>() {
 
+    private val item = mutableListOf<Repositories>()
     class RepoItemViewHolder(item: View): RecyclerView.ViewHolder(item){
         val binding = RepoItemBinding.bind(item)
     }
@@ -32,6 +33,13 @@ class RepoItemAdapter (private val item: List<Repositories>):RecyclerView.Adapte
     }
 
     override fun getItemCount(): Int = item.size
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun setChange(repos: List<Repositories>) {
+        item.clear()
+        item.addAll(repos)
+        notifyDataSetChanged()
+    }
 
 
 }

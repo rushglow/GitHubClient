@@ -1,11 +1,14 @@
 package com.example.githubclient.Login
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.Toast
 import com.example.githubclient.R
+import com.example.githubclient.Repositories.RepoActivity
 import com.example.githubclient.databinding.ActivityLoginBinding
 import com.example.githubclient.databinding.ActivityRepoBinding
 import moxy.MvpAppCompatActivity
@@ -22,9 +25,11 @@ abstract class LoginActivity : MvpAppCompatActivity(R.layout.activity_login), Lo
                 binding = ActivityLoginBinding.inflate(layoutInflater)
                 setContentView(binding.root)
 
+                presenter = LoginPresenter()
+
                 binding.tokenEt.addTextChangedListener(object : TextWatcher{
                         override fun afterTextChanged(s: Editable) {
-                                getLogin()
+                                presenter.getLogin()
                         }
 
                         override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
@@ -33,19 +38,20 @@ abstract class LoginActivity : MvpAppCompatActivity(R.layout.activity_login), Lo
                 })
 
                 binding.btnSignIn.setOnClickListener(){
-                        tokenToModel()
+                        presenter.loginToModel()
                 }
         }
 
         override fun getLogin() {
-                        presenter.getLogin()
-        }
-
-        override fun tokenToModel() {
-                TODO("Not yet implemented")
+                presenter.login = binding.tokenEt.text.toString()
         }
 
         override fun startRepoActivity() {
-                super.startRepoActivity()
+                val intent = Intent(this, RepoActivity::class.java)
+                startActivity(intent)
+        }
+
+        override fun showError() {
+                Toast.makeText(applicationContext,"Неправильно введен логин", Toast.LENGTH_SHORT).show()
         }
 }

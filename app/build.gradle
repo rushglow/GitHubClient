@@ -45,18 +45,21 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
+
+    //gson
+    implementation 'com.google.code.gson:gson:2.10'
+
     //moxy
     implementation "com.github.moxy-community:moxy:2.2.2"
     kapt "com.github.moxy-community:moxy-compiler:2.2.2"
     implementation "com.github.moxy-community:moxy-androidx:2.2.2"
     implementation "com.github.moxy-community:moxy-android:2.2.2"
 
-    //gson
-    implementation 'com.google.code.gson:gson:2.10'
-
-    //retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
 
 
 

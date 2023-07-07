@@ -1,5 +1,6 @@
 package com.example.githubclient.Model
 
+import com.example.githubclient.Login.LoginPresenter
 import com.example.githubclient.Repositories.RepoPresenter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -10,6 +11,7 @@ import kotlin.coroutines.suspendCoroutine
 
 class Model {
     lateinit var repoPresenter: RepoPresenter
+    lateinit var loginPresenter: LoginPresenter
     fun setLoginToken(loginToken:String){
         val BASE_URL = "https://api.github.com"
         val retrofit = Retrofit.Builder()
@@ -22,6 +24,7 @@ class Model {
 
             repoPresenter.getRepositories(repositories)
         }
+        loginPresenter.startRepoActivity()
     }
 
 
