@@ -1,4 +1,4 @@
-package com.example.githubclient.Repositories
+package com.example.githubclient.repositories
 
 data class Repositories(
     var message: String? = null,

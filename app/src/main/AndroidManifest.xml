@@ -16,10 +16,10 @@
         android:theme="@style/Theme.GitHubClient"
         tools:targetApi="31">
         <activity
-            android:name=".Repositories.RepoActivity"
+            android:name=".repositories.RepoActivity"
             android:exported="false" />
         <activity
-            android:name=".Login.LoginActivity"
+            android:name=".login.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

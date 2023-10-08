@@ -1,13 +1,12 @@
 package com.example.githubclient.Model
 
-import com.example.githubclient.Login.LoginPresenter
-import com.example.githubclient.Repositories.RepoPresenter
+import com.example.githubclient.login.LoginPresenter
+import com.example.githubclient.repositories.RepoPresenter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import kotlin.coroutines.suspendCoroutine
 
 class Model {
     lateinit var repoPresenter: RepoPresenter
